@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Praveen Tomar | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:linear-gradient(135deg,#0f172a,#1e3a8a,#7c3aed);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(10px);
+      position:fixed;
+      top:0;
+      z-index:1000;
+    }
+
+    header h1{
+      font-size:32px;
+      color:#00f7ff;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:25px;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#00f7ff;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:120px 10%;
+      flex-direction:column;
+    }
+
+    .hero h2{
+      font-size:60px;
+      margin-bottom:20px;
+      background:linear-gradient(to right,#00f7ff,#ff00ea);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      max-width:700px;
+      font-size:20px;
+      line-height:1.8;
+      color:#d1d5db;
+    }
+
+    .btn{
+      margin-top:35px;
+      padding:15px 40px;
+      border:none;
+      border-radius:50px;
+      background:linear-gradient(45deg,#00f7ff,#ff00ea);
+      color:white;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.4s;
+      text-decoration:none;
+      box-shadow:0 0 20px rgba(0,247,255,0.5);
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+      box-shadow:0 0 30px rgba(255,0,234,0.7);
+    }
+
+    section{
+      padding:100px 10%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:60px;
+      color:#00f7ff;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.08);
+      border-radius:20px;
+      padding:30px;
+      transition:0.4s;
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      background:rgba(255,255,255,0.12);
+      box-shadow:0 0 25px rgba(0,247,255,0.3);
+    }
+
+    .card h3{
+      color:#00f7ff;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .card p{
+      color:#d1d5db;
+      line-height:1.7;
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:20px;
+    }
+
+    .skill{
+      padding:15px 25px;
+      border-radius:30px;
+      background:linear-gradient(45deg,#00f7ff,#7c3aed);
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .skill:hover{
+      transform:scale(1.1);
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:rgba(255,255,255,0.05);
+      margin-top:50px;
+      color:#d1d5db;
+    }
+
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+      }
+
+      nav{
+        margin-top:15px;
+      }
+
+      .hero h2{
+        font-size:42px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Praveen</h1>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hi, I'm Praveen Tomar</h2>
+
+    <p>
+      DevOps & Cloud Engineer passionate about AWS, Docker, GitHub Actions,
+      Linux, Automation and building modern full-stack applications.
+    </p>
+
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
+
+  <section id="projects">
+    <h2 class="title">My Projects</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>DevOps CI/CD Pipeline</h3>
+        <p>
+          Automated deployment pipeline using GitHub Actions, Docker and AWS EC2.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>
+          Responsive personal portfolio deployed on GitHub Pages with custom domain.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>AI Assistant</h3>
+        <p>
+          JARVIS-like AI assistant using Streamlit and Hugging Face free models.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="title">Skills</h2>
+
+    <div class="skills">
+      <div class="skill">AWS</div>
+      <div class="skill">Docker</div>
+      <div class="skill">Linux</div>
+      <div class="skill">GitHub Actions</div>
+      <div class="skill">Shell Scripting</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">DevOps</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="title">Contact Me</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Email</h3>
+        <p>tomarpraveen640@gmail.com</p>
+      </div>
+
+      <div class="card">
+        <h3>GitHub</h3>
+        <p>github.com/Praveen48589</p>
+      </div>
+
+      <div class="card">
+        <h3>Location</h3>
+        <p>India</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Praveen Tomar | DevOps & Cloud Engineer
+  </footer>
+
+</body>
+</html>
