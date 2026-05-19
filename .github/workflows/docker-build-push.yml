@@ -23,4 +23,4 @@ jobs:
               with:
                 context: .
                 push: true
-                tags: ${{vars.DOCKERHUB_USERNAME}}/${{ github.GITHUB_HEAD_REF}}:latest
+                tags: ${{vars.DOCKERHUB_USERNAME}}/${{ github.ref}}:latest
