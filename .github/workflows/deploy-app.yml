@@ -26,4 +26,15 @@ jobs:
         run: docker compose ps
 
       - name: Check app health
-        run: curl --fail http://localhost/health
+        run: |
+          for i in {1..10}; do
+            if curl --fail http://localhost/health; then
+              exit 0
+            fi
+            sleep 3
+          done
+          exit 1
+
+      - name: Show container logs on failure
+        if: failure()
+        run: docker compose logs --tail=100

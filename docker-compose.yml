@@ -1,6 +1,6 @@
 services:
-  
   web:
     image: ${DOCKERHUB_USERNAME}/github-actions-app:latest
+    restart: unless-stopped
     ports:
       - "80:80"
