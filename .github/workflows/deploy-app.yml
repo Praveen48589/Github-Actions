@@ -7,7 +7,8 @@ on:
 jobs:
     deploy:
         env: 
-            DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+            DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}  
+            DOCKER_TAG: ${{ github.sha}}
         runs-on: self-hosted
 
         steps:
@@ -18,5 +19,5 @@ jobs:
               uses: docker/setup-compose-action@v2
 
             - name: Deploy with docker compose
-              run: docker compose up -d --build --force-recreate
+              run: docker compose down && docker compose up -d --build --force-recreate --pull always
                 
