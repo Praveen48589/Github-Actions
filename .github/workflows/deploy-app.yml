@@ -21,3 +21,9 @@ jobs:
 
       - name: Deploy latest container
         run: docker compose up -d --force-recreate
+
+      - name: Show running containers
+        run: docker compose ps
+
+      - name: Check app health
+        run: curl --fail http://localhost/health
