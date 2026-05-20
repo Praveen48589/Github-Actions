@@ -28,11 +28,13 @@ jobs:
       - name: Check app health
         run: |
           for i in {1..10}; do
-            if curl --fail http://localhost/health; then
+            if curl --fail http://127.0.0.1/health; then
               exit 0
             fi
+            docker compose ps
             sleep 3
           done
+          docker compose logs --tail=100
           exit 1
 
       - name: Show container logs on failure
