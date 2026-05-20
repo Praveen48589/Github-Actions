@@ -1,42 +1,22 @@
 name: Deploy
 
 on:
-  workflow_dispatch:
+    workflow_dispatch:
+
 
 jobs:
-  deploy:
-    runs-on: self-hosted
-    env:
-      DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+    deploy:
+        env: 
+            DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+        runs-on: self-hosted
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Set up docker compose
-        uses: docker/setup-compose-action@v2
+            - name: Set up docker compose 
+              uses: docker/setup-compose-action@v4
 
-      - name: Pull latest image
-        run: docker compose pull
-
-      - name: Deploy latest container
-        run: docker compose up -d --force-recreate
-
-      - name: Show running containers
-        run: docker compose ps
-
-      - name: Check app health
-        run: |
-          for i in {1..10}; do
-            if curl --fail http://127.0.0.1/health; then
-              exit 0
-            fi
-            docker compose ps
-            sleep 3
-          done
-          docker compose logs --tail=100
-          exit 1
-
-      - name: Show container logs on failure
-        if: failure()
-        run: docker compose logs --tail=100
+            - name: Deploy with docker compose
+              run: docker compose up -d --build
+          
