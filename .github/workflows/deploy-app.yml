@@ -1,22 +1,23 @@
 name: Deploy
 
 on:
-    workflow_dispatch:
-
+  workflow_dispatch:
 
 jobs:
-    deploy:
-        env: 
-            DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
-        runs-on: self-hosted
+  deploy:
+    runs-on: self-hosted
+    env:
+      DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-            - name: Set up docker compose 
-              uses: docker/setup-compose-action@v2  
+      - name: Set up docker compose
+        uses: docker/setup-compose-action@v2
 
-            - name: Deploy with docker compose
-              run: docker compose up -d --build
-          
+      - name: Pull latest image
+        run: docker compose pull
+
+      - name: Deploy latest container
+        run: docker compose up -d --force-recreate
