@@ -1,6 +1,0 @@
-name: dependencies-scan
-
-on:
-   workflow_dispatch: 
-  
-

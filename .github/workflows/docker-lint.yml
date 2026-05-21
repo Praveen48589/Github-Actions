@@ -1,6 +1,0 @@
-name: docker-lint
-
-on:
-   workflow_dispatch: 
-  
-
