@@ -1,3 +1,6 @@
-flake8
-flask
-bandit
+flake8 # for linting and code quality checks
+
+flask # python framework
+
+bandit # for code vulnerability
+
