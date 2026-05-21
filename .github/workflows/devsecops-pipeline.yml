@@ -1,7 +1,8 @@
 name: DevSecOps End To End Pipeline
 
 on:
-    workflow_dispatch:
+    push:
+        branches: [main]
 
 
 jobs:
@@ -14,4 +15,3 @@ jobs:
     docker-scan:
         uses: ./.github/workflows/docker-lint.yml
 
-        
