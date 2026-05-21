@@ -1,9 +1,9 @@
 name: Deploy
 
-on:
+on:   # after build and push workflow  steps it works >>
   workflow_run:
     workflows:
-      - docker build
+      - docker build #workflow name >>
     types:
       - completed
 

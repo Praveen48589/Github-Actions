@@ -2,11 +2,11 @@ name: hello!!
 
 # run on a trigger!!
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
+   
  # only trigger when any changes occur in html file!!
-    paths:
-      - '**.html'
+    # paths:
+    #   - '**.html'
 
 # These are jobs inside workflow!!
 jobs:
