@@ -27,6 +27,7 @@ jobs:
     trivy:
         needs: [build]
         uses: ./.github/workflows/image-scan.yml
+        secrets: inherit
 
     
 
