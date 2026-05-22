@@ -8,6 +8,10 @@ jobs:
     image-scanner:
         runs-on: ubuntu-latest
         steps:
+
+            - name: Checkout Code
+              uses: actions/checkout@v4
+
             - name: Login To Docker Hub
               uses: docker/login-action@v4
               with:
@@ -20,3 +24,4 @@ jobs:
                 image-ref: ${{vars.DOCKERHUB_USERNAME}}/github-actions-app:${{ github.sha}}
                 severity: 'CRITICAL,HIGH'
                 exit-code: '1'
+                trivyignore: ${{ github.workspace}}/.trivyignore
