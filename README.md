@@ -373,4 +373,3 @@ That is expected. GitHub Pages serves the root `index.html`; the Flask app serve
 Praveen Tomar
 
 - GitHub: [Praveen48589](https://github.com/Praveen48589)
-- Portfolio domain: [praveentomar.shop](https://praveentomar.shop)
