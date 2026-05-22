@@ -18,6 +18,9 @@ jobs:
                 username: ${{ vars.DOCKERHUB_USERNAME }}
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+
+            #  Scan the image!!
+
             - name: Trivy Scanner
               uses: aquasecurity/trivy-action@v0.35.0
               with:
@@ -25,3 +28,6 @@ jobs:
                 severity: 'CRITICAL'
                 exit-code: '1'
                 # trivyignore: ${{ github.workspace }}/.trivyignore
+
+            
+              
