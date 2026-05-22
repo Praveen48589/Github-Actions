@@ -4,3 +4,5 @@ flask # python framework
 
 bandit # for code vulnerability
 
+gunicorn
+
