@@ -25,5 +25,5 @@ jobs:
               uses: docker/setup-compose-action@v4
 
             - name: Deploy with docker compose
-              run: c
+              run: docker compose down && docker compose up -d --build --force-recreate --pull always
                 

@@ -1,4 +1,4 @@
-name: Dockerfile     lint
+name: Dockerfile lint
 
 on:
     workflow_call:
